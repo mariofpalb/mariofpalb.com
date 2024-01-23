@@ -1,17 +1,39 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import profile_pic from '../images/profile_pic.jpg'
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import profile_pic from "../images/profile_pic.jpg";
+import SocialLinkButton from "../components/SocialLinkButton.astro";
+import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 ---
 
 <Layout title="Portfolio of Mario Fernández-Pacheco">
-	<main class="px-6">
-		<section class="w-full lg:w-[768px] mx-auto pt-40">
-			<Image class="size-60 rounded-full mb-8" src={profile_pic} alt="Picture of Mario Fernández-Pacheco Albadea" />
+  <main class="px-6">
+    <section class="w-full lg:w-[768px] mx-auto pt-40">
+      <Image
+        class="size-60 rounded-full mb-8"
+        src={profile_pic}
+        alt="Picture of Mario Fernández-Pacheco Albadea"
+      />
 
-			<h1 class="text-5xl font-bold mb-10">Hey! It's me! <span class="text-[#FF6851]">M</span><span class="text-[#7EE97B]">a</span><span class="text-[#FFFF57]">r</span><span class="text-[#67D2FF]">i</span><span class="text-[#7EE97B]">o</span>!</span></h1>
+      <h1 class="text-5xl font-bold mb-6">
+        Hey! It's me! <span class="text-[#FF6851]">M</span><span
+          class="text-[#7EE97B]">a</span
+        ><span class="text-[#FFFF57]">r</span><span class="text-[#67D2FF]"
+          >i</span
+        ><span class="text-[#7EE97B]">o</span>!
+      </h1>
 
-			<h2 class="text-3xl font-semibold text-balance"><span class="text-[#FFAD56]">Sofware Developer</span> with +3 years of experience in the industry</h2>
-		</section>
-	</main>
+      <h2 class="text-3xl font-semibold text-pretty mb-10">
+        <span class="text-[#FFAD56]">Sofware Developer</span> with +3 years of experience
+        in the industry
+      </h2>
+
+      <div class="flex flex-row gap-5">
+        <SocialLinkButton href="https://www.linkedin.com/in/mfpalb">
+          <LinkedInIcon class="size-6" />
+          LinkedIn
+        </SocialLinkButton>
+      </div>
+    </section>
+  </main>
 </Layout>
