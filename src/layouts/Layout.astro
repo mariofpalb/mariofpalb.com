@@ -1,9 +1,9 @@
 ---
-import Navbar from '../components/Navbar.astro';
-import '@fontsource-variable/onest';
+import Navbar from "../components/Navbar.astro";
+import "@fontsource-variable/onest";
 
 interface Props {
-	title: string;
+  title: string;
 }
 
 const { title } = Astro.props;
@@ -11,31 +11,34 @@ const { title } = Astro.props;
 
 <!doctype html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="description" content="Astro description" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body>
-		<div class="absolute top-0 z-[-2] h-screen w-screen bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
-		<Navbar />
-		<slot />
-	</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="relative text-black dark:text-white">
+    <div
+      class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-neutral-950 bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"
+    >
+    </div>
+    <Navbar />
+    <slot />
+  </body>
 </html>
 <style is:global>
-	:root {
-		color-scheme: light dark;
-	}
-	html {
-		font-family: 'Onest Variable', sans-serif;
-		background: #13151a;
-		background-size: 224px;
-	}
+  :root {
+    color-scheme: light dark;
+  }
+  html {
+    font-family: "Onest Variable", sans-serif;
+    background: #13151a;
+    background-size: 224px;
+  }
 
-	body {
-		height: 100dvh;
-	}
+  body {
+    min-height: 100dvh;
+  }
 </style>

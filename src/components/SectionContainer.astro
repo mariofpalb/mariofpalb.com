@@ -1,0 +1,34 @@
+---
+interface Props {
+  class: string;
+  section?: SectionTypes;
+}
+
+type SectionTypes = "EXPERIENCE";
+
+const { section } = Astro.props;
+
+type Section = {
+  id: string;
+  title: string;
+};
+
+type SectionsList = {
+  [section in SectionTypes]: Section;
+};
+
+const sectionsData: SectionsList = {
+  EXPERIENCE: {
+    id: "experience",
+    title: "Experience",
+  },
+};
+---
+
+<section
+  class=`w-full lg:w-[768px] mx-auto ${Astro.props.class}`
+  id={section ? sectionsData[section].id : null}
+>
+  <h1></h1>
+  <slot />
+</section>
