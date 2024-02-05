@@ -1,12 +1,13 @@
 ---
 interface Props {
   class: string;
+  bgColor?: string;
   section?: SectionTypes;
 }
 
 type SectionTypes = "EXPERIENCE";
 
-const { section } = Astro.props;
+const { section, bgColor } = Astro.props;
 
 type Section = {
   id: string;
@@ -29,10 +30,18 @@ const sectionsData: SectionsList = {
   class=`w-full lg:w-[768px] mx-auto ${Astro.props.class}`
   id={section ? sectionsData[section].id : null}
 >
-  {
-    section && (
-      <h1 class="font-semibold text-3xl mb-8">{sectionsData[section].title}</h1>
-    )
-  }
-  <slot />
+  <div
+    class=`bg-[${bgColor ?? "#FFF"}] rounded-3xl p-6
+    shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]
+    border-4 border-solid border-black`
+  >
+    {
+      section && (
+        <h1 class="font-semibold text-3xl mb-8">
+          {sectionsData[section].title}
+        </h1>
+      )
+    }
+    <slot />
+  </div>
 </section>

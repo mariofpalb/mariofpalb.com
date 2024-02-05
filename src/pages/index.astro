@@ -1,43 +1,16 @@
 ---
 import Layout from "../layouts/Layout.astro";
-import { Image } from "astro:assets";
-import profile_pic from "../images/profile_pic.jpg";
-import SocialLinkButton from "../components/SocialLinkButton.astro";
-import LinkedInIcon from "../components/icons/LinkedInIcon.astro";
 import SectionContainer from "../components/SectionContainer.astro";
 import ExperienceTimeLine from "../components/ExperienceTimeLine.astro";
+import IntroSection from "../components/IntroSection.astro";
 ---
 
 <Layout title="Portfolio of Mario Fernández-Pacheco">
   <main class="px-6 pb-10">
-    <SectionContainer class="pt-40">
-      <Image
-        class="size-60 rounded-2xl mb-8 shadow-[-6px_6px_0px_0px_rgba(255,255,255,1)]"
-        src={profile_pic}
-        alt="Picture of Mario Fernández-Pacheco Albadea"
-      />
-
-      <h1 class="text-5xl font-bold mb-6">
-        Hey! It's a me! <span class="text-[#FF6851]">M</span><span
-          class="text-[#7EE97B]">a</span
-        ><span class="text-[#FFFF57]">r</span><span class="text-[#67D2FF]"
-          >i</span
-        ><span class="text-[#7EE97B]">o</span>!
-      </h1>
-
-      <h2 class="text-3xl text-pretty mb-10">
-        <span class="text-[#FFAD56]">Sofware Developer</span> with +3 years of experience
-        in the industry
-      </h2>
-
-      <div class="flex flex-row gap-5">
-        <SocialLinkButton href="https://www.linkedin.com/in/mfpalb">
-          <LinkedInIcon class="size-6" />
-          LinkedIn
-        </SocialLinkButton>
-      </div>
+    <SectionContainer class="pt-4" bgColor="#3BC8C3">
+      <IntroSection />
     </SectionContainer>
-    <SectionContainer class="pt-20" section="EXPERIENCE">
+    <SectionContainer class="pt-10" section="EXPERIENCE">
       <ExperienceTimeLine />
     </SectionContainer>
   </main>
