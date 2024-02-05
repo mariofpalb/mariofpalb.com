@@ -31,9 +31,10 @@ const sectionsData: SectionsList = {
   id={section ? sectionsData[section].id : null}
 >
   <div
-    class=`bg-[${bgColor ?? "#FFF"}] rounded-3xl p-6
+    class=`rounded-3xl p-6
     shadow-[10px_10px_0px_0px_rgba(0,0,0,1)]
     border-4 border-solid border-black`
+    style={`background-color: ${bgColor ?? "#FFF"};`}
   >
     {
       section && (
