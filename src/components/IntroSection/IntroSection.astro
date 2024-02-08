@@ -1,0 +1,31 @@
+---
+import { Image } from "astro:assets";
+import profile_pic from "../../images/profile_pic.jpg";
+import SocialLinkButton from "../SocialLinkButton.astro";
+---
+
+<Image
+  class="size-60 rounded-full mb-8 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] border-2 border-solid border-black"
+  src={profile_pic}
+  alt="Picture of Mario Fernández-Pacheco Albadea"
+/>
+
+<h1 class="text-5xl font-bold mb-10">
+  Hey! It's a me! <span
+    class="bg-white border-4 border-solid
+    border-black px-4 py-2
+    shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]
+    rounded-xl transition"
+    ><span class="text-[#e52521]">M</span><span class="text-[#43B047]">a</span
+    ><span class="text-[#FBD000]">r</span><span class="text-[#049cd8]">i</span
+    ><span class="text-[#43B047]">o</span>!</span
+  >
+</h1>
+
+<h2 class="text-3xl text-pretty mb-10">
+  Sofware Developer with +3 years of experience in the industry
+</h2>
+
+<div class="flex flex-row gap-5">
+  <SocialLinkButton socialType="LINKEDIN" />
+</div>
