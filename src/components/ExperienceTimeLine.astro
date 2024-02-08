@@ -42,8 +42,8 @@ const companiesList: Array<CompanyInfo> = [
   {
     title: "Full Stack Developer",
     company: "GlobalIncubator",
-    companyUrl: "www.globalincubator.com",
-    companyLogo: null,
+    companyUrl: "https://www.globalincubator.com",
+    companyLogo: "https://media.licdn.com/dms/image/C4D0BAQGR_Etg_WaWuQ/company-logo_200_200/0/1630475837381/global_incubator_logo?e=2147483647&v=beta&t=VEb3dtaOC_vORjBEd6iaAm6Ros_MW83_vvEiQ4WleLA",
     experienceList: [
       {
         startingDate: new Date("2021-01-01"),
@@ -69,13 +69,13 @@ const companiesList: Array<CompanyInfo> = [
         companyInfo;
 
       const isLastItem = index === companiesList.length - 1;
+      const isEven = index % 2 === 0;
 
       return (
         <li
-          class={`flex bg-white border-4 border-black p-4
-            shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] ${
-            isLastItem ? "" : " mb-6"
-          }`}
+          class={`flex bg-white border-4 border-black p-4 rounded-xl
+            ${isEven ? "shadow-[6px_6px_0px_0px_rgba(0,0,0,1)]" : "shadow-[-6px_6px_0px_0px_rgba(0,0,0,1)]"}
+            ${isLastItem ? "" : " mb-6"}`}
         >
           <div class="w-24 shrink-0 mr-3">
             {companyLogo && (
@@ -89,6 +89,7 @@ const companiesList: Array<CompanyInfo> = [
             )}
           </div>
           <section class="flex flex-col">
+            <h2 class="text-2xl mb-4 font-bold"><a href={companyUrl} target="_blank">{company}</a></h2>
             {
               experienceList.map((experience, experienceIndex) => {
                 const { startingDate, endingDate, title, experienceDescription } = experience
@@ -97,11 +98,11 @@ const companiesList: Array<CompanyInfo> = [
 
                 return (
                   <div class="flex flex-col justify-center">
-                    <time class="row-span-1  mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+                    <time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
                       {startingDate.toLocaleDateString()} -{" "}
                       {endingDate ? endingDate.toLocaleDateString() : "Present"}
                     </time>
-                    <h3 class="row-span-1 self-start text-lg font-semibold text-black">
+                    <h3 class="text-lg font-semibold text-black">
                       {title}
                     </h3>
                   </div>
